@@ -16,11 +16,9 @@ def get_todos():
 # Define the route for '/todos' (POST method)
 @app.route('/todos', methods=['POST'])
 def add_new_todo():
-    request_body = request.data
-    # Assuming the incoming data is in JSON format, we can decode it
-    new_todo = request.get_json()
-    todos.append(new_todo)
-    return jsonify({"message": "Todo added successfully!"})
+    request_body = request.get_json(force=True)
+    todos.append(request_body)
+    return jsonify(todos)
 
 # Keep the lines below at the end of your app.py file
 if __name__ == '__main__':
