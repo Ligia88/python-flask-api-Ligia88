@@ -36,6 +36,6 @@ def delete_todo(position):
     else:
         return jsonify({"error": "Invalid position"}), 400
 
-# Keep the lines below at the end of your app.py file
+# Keep the lines below at the end of the app.py file
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3245, debug=True)
